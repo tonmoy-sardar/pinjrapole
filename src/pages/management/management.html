@@ -1,0 +1,95 @@
+<!--
+  Generated template for the ManagementPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>management</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content class="masters">
+
+    <div padding>
+        <ion-segment [(ngModel)]="managementType">
+            <ion-segment-button value="management">
+                Management
+            </ion-segment-button>
+            <ion-segment-button value="committeeMembers">
+                Committee Members
+            </ion-segment-button>
+            <ion-segment-button value="pastPresident">
+                Past President
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+
+    <div *ngIf="managementType=='management'">
+        <ion-card class="bradcumb">
+            <ion-card-header>
+                Management
+            </ion-card-header>
+        </ion-card>
+
+        <ion-card class="pinkgrey" *ngFor="let allTrusty of allTrustyList; let i = index">
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="12">
+                        <div class="managment-sec">
+                            <img src="{{allTrusty.management_small_image}}" class="slide-image" />
+                            <div class="managment-text">
+                                <h3>{{allTrusty.management_title}}</h3>
+                                <p style="padding-bottom: 5px;">{{allTrusty.management_content}}</p>
+
+                            </div>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card>
+    </div>
+    <ion-card class="bradcumb" *ngIf="managementType=='committeeMembers'">
+        <ion-card-header>
+            Working Committee Members
+        </ion-card-header>
+
+    </ion-card>
+
+    <ion-grid *ngIf="managementType=='committeeMembers'">
+        <ion-row>
+            <ion-col  col-6 *ngFor="let allCommittee of allCommitteeList; let i = index">
+                <div class="magazine-sec">
+                    <img src="{{allCommittee.management_small_image}}" class="slide-image" (click)="openCommitteeModal(i)"/>
+                    <span>{{allCommittee.management_title}}</span>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-card class="bradcumb" *ngIf="managementType=='pastPresident'">
+        <ion-card-header>
+            Name of the past President and General Secretaries
+        </ion-card-header>
+
+    </ion-card>
+
+    <ion-grid *ngIf="managementType=='pastPresident'">
+        <ion-row>
+            <ion-col  col-6 *ngFor="let allSecretary of allSecretaryList; let i = index">
+                <div class="magazine-sec">
+                    <img src="{{allSecretary.management_small_image}}" class="slide-image" (click)="openSecretaryModal(i)"/>
+                    <span>{{allSecretary.management_title}}</span>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+
+</ion-content>

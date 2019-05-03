@@ -1,0 +1,7 @@
+{
+  "name": "Pinjrapole",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

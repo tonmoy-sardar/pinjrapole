@@ -1,0 +1,41 @@
+<!--
+  Generated template for the ServicesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>services</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="masters">
+    <ion-card class="bradcumb">
+        <ion-card-header>
+            Service
+        </ion-card-header>
+
+    </ion-card>
+
+    <ion-card class="pinkgrey" *ngFor="let allService of allServiceList; let i = index">
+        <ion-grid>
+            <ion-row>
+                <ion-col size="12">
+                    <div class="managment-sec">
+                        <img src="{{allService.service_img}}" class="slide-image" (click)="gotoDetails(allService.service_id)"/>
+                        <div class="managment-text">
+                            <h3>{{allService.service_title}}</h3>
+                            <p style="padding-bottom: 5px;">{{allService.service_content}}</p>
+                            <a class="enquiryLink" href="javascript:void(0)" (click)="gotoPage('ContactPage')">Enquiry</a>
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+
+</ion-content>

@@ -1,0 +1,68 @@
+<ion-header class="bar bar-header">
+    <ion-toolbar>
+        <ion-buttons>
+            <button ion-button menuToggle color="light">
+                <ion-icon name="menu"></ion-icon>
+                <ion-title><img src="assets/imgs/logo.png" width="200" /></ion-title>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-menu [content]="mycontent">
+    <ion-content>
+        <ion-item>
+            <img src="assets/imgs/logo.png" width="200" />
+        </ion-item>
+        <ion-item (click)="gotoPage('HomePage')">
+            <ion-icon name="ion-md-home" class="ion-md-home"></ion-icon>
+            Home
+        </ion-item>
+        <ion-item (click)="gotoPage('AboutusPage')">
+            <ion-icon name="ion-md-information-circle" class="ion-md-information-circle"></ion-icon>
+            About Us
+        </ion-item>
+        <ion-item (click)="gotoPage('BranchPage')">
+            <ion-icon name="ion-md-git-branch" class="ion-md-git-branch"></ion-icon>
+            Branch
+        </ion-item>
+        <ion-item (click)="gotoPage('ProductPage')">
+            <ion-icon name="ion-md-basket" class="ion-md-basket"></ion-icon>
+            Products
+        </ion-item>
+        <ion-item (click)="gotoPage('ServicesPage')">
+            <ion-icon name="ion-ios-paper" class="ion-ios-paper"></ion-icon>
+            Services
+
+        </ion-item>
+        <ion-item (click)="gotoPage('YojanaPage')">
+            <ion-icon name="ion-md-help-buoy" class="ion-md-help-buoy"></ion-icon>
+            Yojana
+
+        </ion-item>
+        <ion-item (click)="gotoPage('ManagementPage')">
+            <ion-icon name="ion-md-help-buoy" class="ion-md-help-buoy"></ion-icon>
+            Management
+
+        </ion-item>
+        <ion-item (click)="gotoPage('MagazinePage')">
+            <ion-icon name="ion-md-help-buoy" class="ion-md-help-buoy"></ion-icon>
+            Magazine
+
+        </ion-item>
+        <ion-item (click)="gotoPage('DonationPage')">
+            <ion-icon name="ion-md-cash" class="ion-md-cash"></ion-icon>
+            Donation
+
+        </ion-item>
+        <ion-item (click)="gotoPage('ContactPage')">
+            <ion-icon name="ion-md-contacts" class="ion-md-contacts"></ion-icon>
+            Contact Us
+
+        </ion-item>
+
+
+    </ion-content>
+</ion-menu>
+
+<ion-nav #mycontent [root]="rootPage" swipeBackEnabled="false"></ion-nav>

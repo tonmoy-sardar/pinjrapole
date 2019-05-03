@@ -1,0 +1,91 @@
+<!--
+  Generated template for the DonationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>About us</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content class="masters">
+
+    <ion-card class="bradcumb">
+        <ion-card-header>
+            About Us
+        </ion-card-header>
+    </ion-card>
+    
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12">
+                <div class="managment-sec">
+                    <img src="{{welcomePageImg}}" class="slide-image" />
+                    <div class="managment-text">
+                        <h3>{{welcomeTitle}} </h3>
+                        <p>{{welcomeContent}}</p>
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <!-- <hr/>
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12">
+                <div class="managment-sec">
+                    <div class="managment-text">
+                        <p>{{about2Content}}</p>
+                    </div>
+                    <img src="{{about2PageImg}}" class="slide-image" />
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid> -->
+    
+    <ion-grid class="bg-orange">
+        <ion-row >
+            <ion-col col-8 class="aboutus">
+                <h3>{{importanceTitle}}</h3>
+                <p>{{importanceContent}}</p>
+            </ion-col>
+            <ion-col col-4>
+                <img src="{{importancePageImg}}" class="slide-image" />
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid class="bg-grey" padding-bottom>
+        <ion-row>
+            <h3>VISIT OUR GOSHALA</h3>
+            <ion-slides *ngIf="allBranchList && allBranchList.length" pager class="banner-slide" autoplay="3000" loop
+                slidesPerView="3" spaceBetween="10">
+                <ion-slide *ngFor="let allBranch of allBranchList; let i = index" (click)="gotoPage('ContactPage')">
+                    <img [src]="allBranch.branches_img" class="slide-image" />
+                    <h4>{{allBranch.branches_title}}</h4>
+                </ion-slide>
+
+            </ion-slides>
+        </ion-row>
+    </ion-grid>
+    <ion-grid class="bg-orange">
+        <ion-row>
+            <ion-col size="4">
+                <iframe width="100%" height="150" src="https://www.youtube.com/embed/xKF-Z1cD2T4" frameborder="0"
+                    allowfullscreen></iframe>
+            </ion-col>
+            <ion-col size="8" class="video-text">
+                <h4> OUR MOTTO IS TO SAVE </h4>
+                <p> COWS TO SAVE THE GLOBE. </p>
+                <button ion-button color="light" round href="javascript:void(0)" (click)="gotoPage('DonationPage')">DONATE
+                    NOW</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

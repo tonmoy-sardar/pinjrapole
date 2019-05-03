@@ -1,0 +1,38 @@
+<!--
+  Generated template for the ServicesdetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Services Details</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="masters">
+    <ion-card class="bradcumb">
+        <ion-card-header>
+            Service Details
+        </ion-card-header>
+
+    </ion-card>
+
+
+    <ion-card class="pinkgrey services-detail" *ngIf="visible">
+        <img src="{{serviceDetails.product_service_img}}" />
+        <ion-card-content>
+            <ion-card-title class="title-size">
+                {{serviceDetails.product_service_title}}
+            </ion-card-title>
+            <p>
+                {{serviceDetails.product_service_content}}
+            </p>
+            <a class="enquiryLink" href="javascript:void(0)" (click)="gotoPage('ContactPage')">Enquiry</a>
+        </ion-card-content>
+    </ion-card>
+    
+</ion-content>

@@ -1,0 +1,112 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+        <!-- <button ion-button menuToggle icon-only></button> -->
+        <ion-title>home</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content  class="masters">
+    <div class="header-banner"  *ngIf="allGalleryImageList && allGalleryImageList.length" >
+        <ion-slides pager class="home-slide" autoplay="3000" loop>
+            <ion-slide *ngFor="let galleryImage of allGalleryImageList; let i = index">
+                <img [src]="galleryImage.image_gallery_img" class="slide-image" />
+            </ion-slide>
+        </ion-slides>
+    </div>
+
+    <ion-grid class="bottm-tag">
+        <ion-row>
+            <ion-col size="4">
+
+                <div class="contant-sec" (click)="gotoPage('AboutusPage')">
+                    <img src="assets/imgs/admin-icon.png" class="slide-image" />
+
+                    <div class="contant-text" style="padding-top: 10px">
+                        <h3>{{whatWeDoTitle}}</h3>
+                        <p>{{whatWeDoContent}}</p>
+                    </div>
+                </div>
+            </ion-col>
+            <ion-col size="4">
+
+                <div class="contant-sec" (click)="gotoPage('DonationPage')">
+                    <img src="assets/imgs/trust.png" class="slide-image" />
+
+                    <div class="contant-text" style="padding-top: 10px">
+                        <h3>{{whyProtectTitle}}</h3>
+                        <p>{{whyProtectContent}}</p>
+                    </div>
+                </div>
+            </ion-col>
+            <ion-col size="4" (click)="gotoPage('ContactPage')">
+
+                <div class="contant-sec">
+                    <img src="assets/imgs/location.png" class="slide-image" />
+
+                    <div class="contant-text" style="padding-top: 10px">
+                        <h3>{{whyNativeTitle}}</h3>
+                        <p>{{whyNativeContent}}</p>
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12">
+
+                <div class="about-sec">
+
+                    <img src="{{whoWePageImg}}" class="slide-image" />
+                    <div class="about-text">
+                        <h3>{{whoWeTitle}}</h3>
+                        <p>{{whoWeContent}}</p>
+                    </div>
+                </div>
+
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid class="bg-grey" padding-bottom>
+        <ion-row>
+            <h3>VISIT OUR GOSHALA</h3>
+            <ion-slides *ngIf="allBranchList && allBranchList.length" pager class="banner-slide" autoplay="3000" loop
+                slidesPerView="3" spaceBetween="10">
+
+                <ion-slide *ngFor="let allBranch of allBranchList; let i = index" (click)="gotoPage('ContactPage')">
+                    <img [src]="allBranch.branches_img" class="slide-image" />
+                    <h4>{{allBranch.branches_title}}</h4>
+                </ion-slide>
+               
+            </ion-slides>
+        </ion-row>
+    </ion-grid>
+    <ion-grid class="bg-orange">
+        <ion-row>
+
+
+            <ion-col size="4">
+                <iframe width="100%" height="150" src="https://www.youtube.com/embed/xKF-Z1cD2T4" frameborder="0"
+                    allowfullscreen></iframe>
+            </ion-col>
+            <ion-col size="8" class="video-text">
+                <h4> OUR MOTTO IS TO SAVE </h4>
+                <p> COWS TO SAVE THE GLOBE. </p>
+
+                <button ion-button color="light" round href="javascript:void(0)" (click)="gotoPage('DonationPage')">DONATE NOW</button>
+            </ion-col>
+
+
+        </ion-row>
+
+    </ion-grid>
+
+    
+</ion-content>

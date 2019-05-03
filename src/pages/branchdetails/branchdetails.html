@@ -1,0 +1,54 @@
+<!--
+  Generated template for the ProductdetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Branch Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="masters" >
+  <ion-card class="bradcumb">
+    <ion-card-header>
+      Branch Details
+    </ion-card-header>
+
+  </ion-card>
+
+
+  <ion-card class="pinkgrey services-detail" *ngIf="visible" >
+    <div class="header-banner"  *ngIf="branchDetails.multiple_image.length>0" >
+      <ion-slides pager class="home-slide" autoplay="3000" loop>
+          <ion-slide *ngFor="let galleryImageUrl of branchDetails.multiple_image; let i = index">
+              <img [src]="galleryImageUrl" class="slide-image" />
+          </ion-slide>
+      </ion-slides>
+    </div>
+    <ion-card style="height: 200px;">
+      <div #map id="map"></div>
+    </ion-card>
+    <ion-card-content>
+      <ion-card-title class="title-size">
+        {{branchDetails.branches_title}}
+      </ion-card-title>
+      <p>
+        {{branchDetails.branches_content}}
+      </p>
+      <!-- <a class="enquiryLink" href="javascript:void(0)" (click)="gotoPage('ContactPage')">Enquiry</a> -->
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="pinkgrey form-sec"  *ngIf="visible">
+    <ion-card-header>
+      Activity
+    </ion-card-header>
+    <p class="managment-text" style="padding:10px;">{{branchDetails.activity}}</p>
+  </ion-card>
+
+</ion-content>

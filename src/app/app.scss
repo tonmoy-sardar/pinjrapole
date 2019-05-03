@@ -1,0 +1,359 @@
+// http://ionicframework.com/docs/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+// CSS for Home page  start
+
+.segment-md .segment-button {
+    color:#ee662b;
+    font-size: 10px;
+    text-transform: none;
+}
+.segment-md .segment-button.segment-activated {
+    border-color: #ee662b;
+}
+.masters
+{
+    background-color: #FDF5E2;
+}
+
+.select-md {
+    padding: 1px 8px 13px 16px;
+}
+
+ion-select {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.text-input-md
+{
+    margin:0px;
+}
+
+ion-input {
+    background-color: #FDF5E2;
+    padding: 4px;
+    color: #6c6c6c;
+    border: 1px solid #D3C9C1;
+    height: 30px;
+}
+
+ion-textarea
+{
+    background-color: #FDF5E2;
+    padding: 4px;
+    color: #6c6c6c;
+    border: 1px solid #D3C9C1;
+}
+
+
+
+.menu-inner .scroll-content
+{
+    background-color : #ee662b;
+}
+ion-menu{
+    ion-content .item-md{
+     background-color : #ee662b;
+     border-bottom: 1px solid #dedede;
+    }
+    .label-md {
+        color: #ffffff;
+    }
+   }
+
+   .item-md.item-block .item-inner
+   {
+    border:0px;
+   }
+
+.enquiryLink{
+  background-color: #eb4a03;
+  color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 20px;
+  font-size: 10px;
+  
+}
+.toolbar-background-md {
+     border-color: #b2b2b2;
+     background: #eb4a03;
+}
+
+.card-header-md {
+    font-size: 1.3rem;
+    padding: 7px;
+}
+
+p {
+    font-size: 13px;
+    line-height: 17px;
+}
+
+.header-banner {
+    // height: 200px;
+    // min-height: 200px;
+    margin-bottom: 0;
+    background: #c63d01;
+    padding: 0;
+}
+
+.slide-zoom {
+    height: 100%;
+}
+
+.bottm-tag {
+    padding: 0;
+}
+
+.bottm-tag .contant-sec {
+    display: block;
+    text-align: center;
+    color: #fff;
+}
+
+.bottm-tag ion-col h3 {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+.bottm-tag ion-col p {
+    font-size: 11px;
+}
+
+.bottm-tag ion-col img {
+    height: 59px;
+    display: block;
+    margin: 0 auto;
+}
+
+.bottm-tag ion-col:nth-child(1) {
+    background: #fc5a13;
+}
+
+.bottm-tag ion-col:nth-child(2) {
+    background: #eb4a03;
+}
+
+.bottm-tag ion-col:nth-child(3) {
+    background: #da4301;
+}
+
+.slide-image {
+    max-width: 100%;
+}
+
+.about-sec {
+    display: flex;
+}
+
+.about-sec img {
+    height: 108px;
+    border-radius: 50%;
+    margin-right: 17px;
+    margin-top: 12%;
+}
+
+.about-sec h3 {
+    font-size: 19px;
+}
+
+.banner-slide {
+    text-align: center;
+}
+
+.banner-slide h4 {
+    text-align: center;
+    font-size: 11px;
+    margin: 0;
+    padding: 0;
+}
+
+.bg-grey {
+    background: #eadec6;
+}
+
+.bg-orange {
+    background: #fc5a13;
+}
+
+.bg-grey h3 {
+    text-align: center;
+    font-size: 16px;
+    margin: 10px auto;
+}
+
+.video-text h4 {
+    text-align: center;
+    font-size: 15px;
+    margin: 10px auto;
+    color: #fff;
+}
+
+.video-text p {
+    display: block;
+    color: #fff;
+    text-align: center;
+}
+
+.video-text button {
+    display: flex;
+    margin: 13px auto;
+}
+
+.video-text {
+    padding: 23px 5px;
+}
+
+.copy-right {
+    text-align: center;
+}
+
+.copy-right p {
+    font-size: 12px;
+}
+
+.copy-right a {
+    color: #da4301;
+}
+
+.card-list-sec {
+    text-align: center;
+    display: block;
+    background: #f9ebe0;
+}
+
+.card-list-sec img {
+    height: 180px;
+}
+
+.card-list-sec ion-card-title {
+    font-size: 20px;
+}
+
+.pinkgrey {
+    background: #f9ebe0;
+}
+
+.bradcumb {
+    background: #fecdb7;
+}
+
+.managment-sec {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.managment-sec img {
+    height: 100px;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 100px;
+}
+
+.managment-sec h3 {
+    font-size: 12px;
+    margin: 0;
+}
+
+.managment-text p {
+    font-size: 10px;
+    margin: 0;
+}
+
+.managment-sec button {
+    padding: 4px 22px;
+    font-size: 11px;
+    background-color: #fc5a13 !important;
+    ;
+}
+
+.font-fifteen ion-card-header {
+    font-size: 10px;
+}
+
+.title-size {
+    font-size: 17px;
+}
+
+.services-detail img {
+    height: 160px;
+}
+
+.list-grid ion-item {
+    border-bottom: 1px solid #d4d4d4;
+    font-size: 13px;
+}
+
+.form-sec
+{
+    background-color: #F9EBE0;
+}
+.form-sec ion-card-header {
+    border-bottom: 1px solid #d4d4d4;
+    background-color: #fc5a13;
+}
+
+.form-sec ion-label {
+    color: #6c6c6c;
+    font-size: 12px;
+    margin: 2px 2px 2px 0px !important;
+}
+
+
+.form-sec button {
+    padding: 4px 22px;
+    font-size: 11px;
+    background-color: #fc5a13 !important;
+}
+
+.error-msg
+{
+    padding: 0;
+    margin: 0;
+    background: none;
+    color: #ff0000;
+    font-size: 11px;
+}
+
+.magazine-sec img {
+    height: 150px;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 100%;
+}
+.magazine-sec { position: relative; overflow: hidden; }
+
+.magazine-sec span 
+{ 
+    position: absolute;
+    background-color: rgba(94, 58, 46, 0.82) !important;
+    bottom: 4px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    border-radius: 0px 0px 6px 6px;
+    color: #ffffff;
+
+}
