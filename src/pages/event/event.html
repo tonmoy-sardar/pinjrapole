@@ -7,7 +7,7 @@
 <ion-header>
 
     <ion-navbar>
-        <ion-title>Branch</ion-title>
+        <ion-title>Event</ion-title>
     </ion-navbar>
 
 </ion-header>
@@ -16,18 +16,18 @@
 <ion-content  class="masters">
     <ion-card class="bradcumb">
         <ion-card-header>
-            Branch
+            Event
         </ion-card-header>
     </ion-card>
-    <ion-card class="pinkgrey" *ngFor="let allBranch of allBranchList; let i = index">
+    <ion-card class="pinkgrey" *ngFor="let allEvent of allEventList; let i = index">
         <ion-grid>
             <ion-row>
                 <ion-col size="12">
-                    <div class="managment-sec" (click)="gotoDetails(allBranch.branches_id)">
-                        <img src="{{allBranch.branches_img}}" class="slide-image" />
+                    <div class="managment-sec" (click)="gotoDetails(allEvent.event_id)">
+                        <img src="{{allEvent.event_img}}" class="slide-image" />
                         <div class="managment-text"> 
-                            <h3>{{allBranch.branches_title}}</h3>
-                            <p style="padding-bottom: 5px;">{{allBranch.string_branches_short_content}}</p>
+                            <h3>{{allEvent.event_title}}</h3>
+                            <p style="padding-bottom: 5px;">{{allEvent.event_content}}</p>
                         </div>
                     </div>
                 </ion-col>

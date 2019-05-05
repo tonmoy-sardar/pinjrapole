@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Branch Details</ion-title>
+    <ion-title>Event Details</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,16 +16,16 @@
 <ion-content class="masters" >
   <ion-card class="bradcumb">
     <ion-card-header>
-      Branch Details
+      Event Details
     </ion-card-header>
 
   </ion-card>
 
 
   <ion-card class="pinkgrey services-detail" *ngIf="visible" >
-    <div class="header-banner"  *ngIf="branchDetails.multiple_image.length>0" >
+    <div class="header-banner"  *ngIf="eventDetails.multiple_image.length>0" >
       <ion-slides pager class="home-slide" autoplay="3000" loop>
-          <ion-slide *ngFor="let galleryImageUrl of branchDetails.multiple_image; let i = index">
+          <ion-slide *ngFor="let galleryImageUrl of eventDetails.multiple_image; let i = index">
               <img [src]="galleryImageUrl" class="slide-image" />
           </ion-slide>
       </ion-slides>
@@ -35,25 +35,25 @@
     </ion-card>-->
     <ion-card-content>
       <ion-card-title class="title-size">
-        {{branchDetails.branches_title}}
+        {{eventDetails.event_title}}
       </ion-card-title>
       <p>
-        {{branchDetails.branches_content}}
+        {{eventDetails.event_content}}
       </p>
       <!-- <a class="enquiryLink" href="javascript:void(0)" (click)="gotoPage('ContactPage')">Enquiry</a> -->
     </ion-card-content>
   </ion-card>
-  <ion-card class="pinkgrey form-sec"  *ngIf="visible && branchDetails.address.length>0">
+  <ion-card class="pinkgrey form-sec"  *ngIf="visible">
     <ion-card-header>
-      Address
+      Place
     </ion-card-header>
-    <p class="managment-text" style="padding:10px;">{{branchDetails.address}}</p>
+    <p class="managment-text" style="padding:10px;">{{eventDetails.place}}</p>
   </ion-card>
-  <ion-card class="pinkgrey form-sec"  *ngIf="visible && branchDetails.activity.length>0">
+  <ion-card class="pinkgrey form-sec"  *ngIf="visible">
     <ion-card-header>
-      Activity
+      Date
     </ion-card-header>
-    <p class="managment-text" style="padding:10px;">{{branchDetails.activity}}</p>
+    <p class="managment-text" style="padding:10px;">{{eventDetails.start_date}} to {{eventDetails.end_date}}</p>
   </ion-card>
   
 

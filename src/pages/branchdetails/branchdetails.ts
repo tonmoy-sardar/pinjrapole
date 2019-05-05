@@ -1,4 +1,4 @@
-import { Component ,ViewChild, ElementRef} from '@angular/core';
+  import { Component ,ViewChild, ElementRef} from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 
 import {MainService} from '../../core/services/main.service';
@@ -37,7 +37,7 @@ export class BranchdetailsPage {
     this.visible = false;
     console.log('ionViewDidLoad BranchDetailsPage');
     this.getBranchDetails(this.navParams.get('id'))
-    this.loadMap();
+    //this.loadMap();
   }
 
   loadMap() {

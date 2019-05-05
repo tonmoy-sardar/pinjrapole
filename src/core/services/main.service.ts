@@ -14,11 +14,17 @@ export class MainService {
   getBranchList(): Observable<any> {
     return this.http.get(environment.apiEndpoint + 'get-branches.php/')
   }
-
+  
   getBranchDetails(id): Observable<any> {
     return this.http.get(environment.apiEndpoint + 'get-branch-details.php?branch_id='+id)
   }
 
+  getEventList(): Observable<any> {
+    return this.http.get(environment.apiEndpoint + 'get-event.php/')
+  }
+  getEventDetails(id): Observable<any> {
+    return this.http.get(environment.apiEndpoint + 'get-event-details.php?event_id='+id)
+  }
 
   getWhoWeAre(page_id): Observable<any> {
     return this.http.get(environment.apiEndpoint + 'get-page.php?page_id='+page_id)
