@@ -22,7 +22,7 @@
   </ion-card>
 
 
-  <ion-card class="pinkgrey services-detail" *ngIf="visible" >
+  <ion-card class="pinkgrey" *ngIf="visible" >
     <div class="header-banner"  *ngIf="eventDetails.multiple_image.length>0" >
       <ion-slides pager class="home-slide" autoplay="3000" loop>
           <ion-slide *ngFor="let galleryImageUrl of eventDetails.multiple_image; let i = index">

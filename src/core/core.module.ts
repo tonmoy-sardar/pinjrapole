@@ -9,8 +9,9 @@ import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 
 import { SpinnerDialog } from '@ionic-native/spinner-dialog';
 //import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
-import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
+import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer/ngx';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+
 //services
 
 import { MainService } from './services/main.service';

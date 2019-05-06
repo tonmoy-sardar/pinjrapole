@@ -1,6 +1,7 @@
   import { Component ,ViewChild, ElementRef} from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 
+
 import {MainService} from '../../core/services/main.service';
 import { SpinnerDialog } from '@ionic-native/spinner-dialog';
 
@@ -22,7 +23,14 @@ export class BranchdetailsPage {
   branchDetails;
   visible: boolean;
   @ViewChild('map') mapElement: ElementRef;
+  @ViewChild('directionsPanel') directionsPanel: ElementRef;
   map: any;
+
+  data:any = {};
+
+
+public lat:number;
+public lng:number;
   constructor(
     private spinnerDialog: SpinnerDialog,
     public navCtrl: NavController, 
@@ -36,84 +44,63 @@ export class BranchdetailsPage {
     this.menuCtrl.close();
     this.visible = false;
     console.log('ionViewDidLoad BranchDetailsPage');
-    this.getBranchDetails(this.navParams.get('id'))
+    this.getBranchDetails(this.navParams.get('id'));
+       
     //this.loadMap();
   }
 
-  loadMap() {
+  loadMap(address,latitude,longitude){
 
-    
-    let latLng = new google.maps.LatLng(22.627420, 88.325920);
+    let latLng = new google.maps.LatLng(latitude, longitude);
 
     let mapOptions = {
       center: latLng,
-      zoom: 5,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      
     }
 
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
 
-    var locations = [
-      ['Calcutta Pinjrapole Society Liluah Gosala, 58, Netaji Subhas Road, Patuapara, Liluah, Howrah, West Bengal 711204', 22.627420, 88.325920, 1],
-      ['Sodepur Gaushala, 48, Sodepur Road, Bankimpally, Amarabati, Sodepur, West Bengal, India', 22.699190, 88.385340, 2],
-      ['Raniganj Gaushala, (Kolkata Pinjrapole Society) Near Hatia Talaw, Beside, Raniganj, West Bengal 713347', 23.603900, 87.117700, 3],
-      ['Hazaribagh Pinjrapole Gaushala, Seotagarha, Jharkhand 825303', 23.999315, 85.420273, 4],
-    ];
 
 
-    
+    let marker = new google.maps.Marker({
+      map: this.map,
+      animation: google.maps.Animation.DROP,
+      position: this.map.getCenter()
+    });
 
-    // let marker = new google.maps.Marker({
-    //   map: this.map,
-    //   animation: google.maps.Animation.DROP,
-    //   position: this.map.getCenter()
-    // });
+    let content = address;          
 
-    // let content = "<h3>Calcutta Pinjrapole Society</h3><h4>34, Armenian Street, Armenian Street, Kolkata, West Bengal 700001</h4>";          
-
-    // this.addInfoWindow(marker, content);
-    var marker, i;
-    var infowindow = new google.maps.InfoWindow();
-    for (i = 0; i < locations.length; i++) {
-      marker = new google.maps.Marker({
-        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-        map: this.map
-      });
-
-      google.maps.event.addListener(marker, 'click', (function (marker, i) {
-        return function () {
-          infowindow.setContent(locations[i][0]);
-          infowindow.open(this.map, marker);
-        }
-      })(marker, i));
-    }
-
+    this.addInfoWindow(marker, content);
   }
-  // loadMap(address,latitude,longitude) {
 
-  //   let latLng = new google.maps.LatLng(latitude,longitude);
+  startNavigating(address,latitude,longitude){
 
-  //   let mapOptions = {
-  //     center: latLng,
-  //     zoom: 5,
-  //     mapTypeId: google.maps.MapTypeId.ROADMAP
-  //   }
+    let directionsService = new google.maps.DirectionsService;
+    let directionsDisplay = new google.maps.DirectionsRenderer;
 
-  //   this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+    directionsDisplay.setMap(this.map);
+    directionsDisplay.setPanel(this.directionsPanel.nativeElement);
+    console.log("dgfg")
+    directionsService.route({
+      origin: 'kolkata',
+      destination: 'champahati',
+        travelMode: google.maps.TravelMode['DRIVING']
+    }, (res, status) => {
+      console.log("aaaaa")
+        if(status == google.maps.DirectionsStatus.OK){
+            directionsDisplay.setDirections(res);
+            console.log("bbbb")
+        } else {
+            console.warn(status);
+            console.log("cccc")
+        }
 
+    });
+
+}
   
-  //   let marker = new google.maps.Marker({
-  //     map: this.map,
-  //     animation: google.maps.Animation.DROP,
-  //     position: this.map.getCenter()
-  //   });
-
-  //   let content = address;          
-
-  //   this.addInfoWindow(marker, content);
-    
-
-  // }
 
   addInfoWindow(marker, content) {
 
@@ -126,7 +113,6 @@ export class BranchdetailsPage {
     });
 
   }
-
   getBranchDetails(id) {
     this.spinnerDialog.show();
     this.mainService.getBranchDetails(id).subscribe(
@@ -134,7 +120,8 @@ export class BranchdetailsPage {
       this.branchDetails = res.data[0];
       this.visible = true;
       this.spinnerDialog.hide();
-      //this.loadMap(this.branchDetails.address,this.branchDetails.latitude,this.branchDetails.longitude);
+      this.loadMap(this.branchDetails.address,this.branchDetails.latitude,this.branchDetails.longitude);
+      //this.startNavigating(this.branchDetails.address,this.branchDetails.latitude,this.branchDetails.longitude);
       },
       error => {
         this.visible = true;

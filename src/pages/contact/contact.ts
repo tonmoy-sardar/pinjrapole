@@ -122,18 +122,6 @@ export class ContactPage {
       ['Hazaribagh Pinjrapole Gaushala, Seotagarha, Jharkhand 825303', 23.999315, 85.420273, 4],
     ];
 
-
-    
-
-    // let marker = new google.maps.Marker({
-    //   map: this.map,
-    //   animation: google.maps.Animation.DROP,
-    //   position: this.map.getCenter()
-    // });
-
-    // let content = "<h3>Calcutta Pinjrapole Society</h3><h4>34, Armenian Street, Armenian Street, Kolkata, West Bengal 700001</h4>";          
-
-    // this.addInfoWindow(marker, content);
     var marker, i;
     var infowindow = new google.maps.InfoWindow();
     for (i = 0; i < locations.length; i++) {

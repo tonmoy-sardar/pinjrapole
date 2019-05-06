@@ -22,7 +22,7 @@
   </ion-card>
 
 
-  <ion-card class="pinkgrey services-detail" *ngIf="visible" >
+  <ion-card class="pinkgrey" *ngIf="visible" >
     <div class="header-banner"  *ngIf="branchDetails.multiple_image.length>0" >
       <ion-slides pager class="home-slide" autoplay="3000" loop>
           <ion-slide *ngFor="let galleryImageUrl of branchDetails.multiple_image; let i = index">
@@ -43,12 +43,17 @@
       <!-- <a class="enquiryLink" href="javascript:void(0)" (click)="gotoPage('ContactPage')">Enquiry</a> -->
     </ion-card-content>
   </ion-card>
-  <ion-card class="pinkgrey form-sec"  *ngIf="visible && branchDetails.address.length>0">
-    <ion-card-header>
-      Address
-    </ion-card-header>
-    <p class="managment-text" style="padding:10px;">{{branchDetails.address}}</p>
-  </ion-card>
+  
+<ion-card class="pinkgrey form-sec">
+  <ion-card-header>
+    Address
+  </ion-card-header>
+  <!--<div #directionsPanel></div>-->
+  <div #map id="map"></div>
+  <p class="managment-text" style="padding:10px;" *ngIf="visible">{{branchDetails.address}}</p>
+</ion-card>
+	
+	 
   <ion-card class="pinkgrey form-sec"  *ngIf="visible && branchDetails.activity.length>0">
     <ion-card-header>
       Activity
