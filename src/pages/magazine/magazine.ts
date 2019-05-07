@@ -85,23 +85,17 @@ export class MagazinePage {
     //this.document.viewDocument(pdfUrl, 'application/pdf', options);
   }
 
-  // download(allMagazine) {
-  //   const fileTransfer: FileTransferObject = this.transfer.create();
-  //   var pdfUrl = allMagazine.magazine_file;
-  //   fileTransfer.download(pdfUrl, cordova.file.dataDirectory + 'file.pdf').then((entry) => {
-  //     console.log('download complete: ' + entry.toURL());
-  //   }, (error) => {
-  //     // handle error
-  //   });
-  // }
+  
 
   openWebpage(url: string) {
     // const options: InAppBrowserOptions = {
     //   zoom: 'no'
     // }
 
+    this.iab.create(url, '_system');
+
     // Opening a URL and returning an InAppBrowserObject
-    const browser = this.iab.create(url, '_system');
+    //const browser = this.iab.create(url, '_system');
     //window.open(‘http://example.com’, ‘_system’);	Loads in the system browser 
 
    // Inject scripts, css and more with browser.X
