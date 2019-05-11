@@ -1,7 +1,6 @@
 import { Component ,ViewChild, ElementRef} from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 
-import { Geolocation } from '@ionic-native/geolocation';
 
 import {MainService} from '../../core/services/main.service';
 import { SpinnerDialog } from '@ionic-native/spinner-dialog';
@@ -38,16 +37,9 @@ public lng:any;
     public navParams: NavParams,
     public menuCtrl:MenuController,
     public mainService:MainService,
-    private geolocation: Geolocation,) {
-      console.log("Data==>","kelo");
-      this.geolocation.getCurrentPosition().then((position) => {
-        console.log("Data==>",position);
-        this.lat = position.coords.latitude;
-        this.lng = position.coords.longitude;
-        
-      }, (err) => {
-        console.log('Error getting location', err);
-      });
+   ) {
+      this.lat = parseFloat(localStorage.getItem('lat'));
+      this.lng = parseFloat(localStorage.getItem('lng'));
   }
 
   ionViewDidLoad() {

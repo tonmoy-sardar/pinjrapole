@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Geolocation} from '@ionic-native/geolocation';
 
 // core module
 import { CoreModule } from '../../src/core/core.module';
@@ -32,7 +33,8 @@ import { CoreModule } from '../../src/core/core.module';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Geolocation,
   ]
 })
 export class AppModule {}

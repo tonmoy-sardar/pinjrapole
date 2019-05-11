@@ -2,9 +2,10 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { Geolocation} from '@ionic-native/geolocation';
 //import { HomePage } from '../pages/home/home';
 //import { ListPage } from '../pages/list/list';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -15,8 +16,9 @@ export class MyApp {
   rootPage: any;
 
   pages: Array<{title: string, component: any}>;
+  
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,private geolocation: Geolocation,) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -32,6 +34,15 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       //this.rootPage = '';
+      this.geolocation.getCurrentPosition().then((position) => {
+        console.log("Data==>",position);
+        
+        localStorage.setItem('lat', position.coords.latitude.toString())
+        localStorage.setItem('lng', position.coords.longitude.toString())
+        
+      }, (err) => {
+        console.log('Error getting location', err);
+      });
       this.nav.setRoot('HomePage');
 
       this.statusBar.styleDefault();
