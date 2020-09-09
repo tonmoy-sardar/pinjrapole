@@ -213,6 +213,15 @@ p {
     color: #fff;
     text-align: center;
 }
+.white-text
+{
+    padding: 0;
+}
+.white-text p{
+    display: block;
+    color: #fff;
+    text-align: center;
+}
 
 .video-text button {
     display: flex;
@@ -220,7 +229,7 @@ p {
 }
 
 .video-text {
-    padding: 23px 5px;
+    //padding: 23px 5px;
 }
 
 .copy-right {

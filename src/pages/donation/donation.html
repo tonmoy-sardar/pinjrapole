@@ -29,7 +29,7 @@
             </ion-col>
             <ion-col col-7>
                 <ion-select [(ngModel)]="donationType">
-                    <ion-option value="Cash">Cash / Cheque</ion-option>
+                    <ion-option value="Cash">Cash / Cheque / Kind</ion-option>
                     <ion-option value="Food">Food Items for Cow</ion-option>
                     <ion-option value="Development">New Development Works</ion-option>
                     <!-- <ion-option value="Digital">Digital Payment</ion-option> -->
@@ -51,7 +51,7 @@
 
     <ion-card class="pinkgrey form-sec" *ngIf="donationType=='Cash'">
         <ion-card-header>
-            Cash / Cheque
+            Cash / Cheque / Kind
         </ion-card-header>
         <div class="donation-content" [innerHTML]="donationCashContent"></div>
     </ion-card>

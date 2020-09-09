@@ -23,11 +23,12 @@
         <ion-grid>
             <ion-row>
                 <ion-col size="12">
-                    <div class="managment-sec" (click)="gotoDetails(allBranch.branches_id)">
+                    <div class="managment-sec" >
                         <img src="{{allBranch.branches_img}}" class="slide-image" />
                         <div class="managment-text"> 
                             <h3>{{allBranch.branches_title}}</h3>
-                            <p style="padding-bottom: 5px;">{{allBranch.string_branches_short_content}}</p>
+                            <p style="padding-top: 5px;padding-bottom: 10px;">{{allBranch.string_branches_short_content}}</p>
+                            <a class="enquiryLink" href="javascript:void(0)" (click)="gotoDetails(allBranch.branches_id)">View Details</a>
                         </div>
                     </div>
                 </ion-col>
